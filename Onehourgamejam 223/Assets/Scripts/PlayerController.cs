@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     public bool onGround = true;
     public float jumpForce = 1;
     private GameObject cam;
+    private Animator animator;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         cam = Camera.main.gameObject;
+        animator = GetComponent<Animator>();
     }
     
     void Update()
@@ -25,18 +27,30 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         int horizontal = 0;
+        bool moved = false;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             horizontal = -1;
+            moved = true;
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             horizontal = 1;
+            moved = true;
         }
 
         _rb.velocity = new Vector2(horizontal * moveSpeed, _rb.velocity.y);
+
+        if (moved)
+        {
+            animator.Play("Walking Anim");
+        }
+        else
+        {
+            animator.Play("Idle Anim");
+        }
 
         CheckForGround();
 
