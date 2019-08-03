@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 1;
     public bool onGround = true;
     public float jumpForce = 1;
+    private GameObject cam;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        cam = Camera.main.gameObject;
     }
     
     void Update()
@@ -50,9 +52,15 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log(hit.collider.gameObject.name);
 
-        if (hit.collider != null)
+        
+if (hit.collider != null)
         {
             onGround = true;
         }
+    }
+
+    private void Cam()
+    {
+        cam.transform.position = new Vector2(transform.position.x, 0);
     }
 }

@@ -8342,11 +8342,6 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[267].second.m_TileFlags
       value: 1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7b2502578d30b41b98acc777513d3d7b, type: 3}
---- !u!1 &1034845480 stripped
-=======
     - target: {fileID: 67208858901916231, guid: 7b2502578d30b41b98acc777513d3d7b,
         type: 3}
       propertyPath: m_Tiles.Array.data[267].second.m_ColliderType
@@ -65770,27 +65765,18 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2502578d30b41b98acc777513d3d7b, type: 3}
 --- !u!1 &835485075 stripped
->>>>>>> 0b16aca174ded75a762169d535f5c2b342c3c40d
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6872263959854459322, guid: 7b2502578d30b41b98acc777513d3d7b,
     type: 3}
   m_PrefabInstance: {fileID: 835485074}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
---- !u!19719996 &1034845484
-=======
 --- !u!19719996 &835485076
->>>>>>> 0b16aca174ded75a762169d535f5c2b342c3c40d
 TilemapCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 1034845480}
-=======
   m_GameObject: {fileID: 835485075}
->>>>>>> 0b16aca174ded75a762169d535f5c2b342c3c40d
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
