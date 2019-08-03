@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        Movement()l;
+        Movement();
     }
 
     private void Movement()
@@ -32,5 +32,10 @@ public class PlayerController : MonoBehaviour
         }
 
         _rb.velocity = new Vector2(horizontal * moveSpeed, _rb.velocity.y);
+
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
+        {
+
+        }
     }
 }
