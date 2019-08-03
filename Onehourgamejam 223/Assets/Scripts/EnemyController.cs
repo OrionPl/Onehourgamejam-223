@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
         StartCoroutine("GangBang");
     }
@@ -39,11 +40,12 @@ public class EnemyController : MonoBehaviour
     {
         if (player.transform.position.x > transform.position.x)
         {
+            transform.localScale = new Vector3(-1, 1, 1);
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
         else
         {
-            Debug.Log(moveSpeed + " | " + rb.velocity.y);
+            transform.localScale = new Vector3(1, 1, 1);
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
 

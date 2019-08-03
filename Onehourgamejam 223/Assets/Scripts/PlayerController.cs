@@ -75,12 +75,12 @@ public class PlayerController : MonoBehaviour
 
     private void CheckForGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, -1.5f), Vector2.down);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, 1.5f), Vector2.down);
 
         Debug.Log(hit.collider.gameObject.name);
 
         
-if (hit.collider != null)
+        if (hit.collider != null)
         {
             onGround = true;
         }
@@ -93,6 +93,11 @@ if (hit.collider != null)
 
     public void GameOver()
     {
+        Destroy(this);
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Fug");
     }
 }

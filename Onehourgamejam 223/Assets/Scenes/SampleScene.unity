@@ -7496,6 +7496,38 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1014415659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5667325636174404828, guid: 35ca4fc5b7356834287c1a7c641d238f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5667325636684005158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1014415660
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014415659}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.6, y: 0.6}
+    newSize: {x: 0.54, y: 0.54}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.6}
+  m_EdgeRadius: 0
 --- !u!1 &1454700602
 GameObject:
   m_ObjectHideFlags: 0
@@ -10387,7 +10419,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1920511586}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fc99482d43ea561448314285d695dfa9, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -10404,6 +10436,11 @@ PrefabInstance:
     - target: {fileID: 5667325636174404828, guid: 35ca4fc5b7356834287c1a7c641d238f,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5667325636174404828, guid: 35ca4fc5b7356834287c1a7c641d238f,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5667325636174404827, guid: 35ca4fc5b7356834287c1a7c641d238f,

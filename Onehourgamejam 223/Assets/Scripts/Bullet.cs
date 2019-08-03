@@ -14,12 +14,14 @@ public class Bullet : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider coll)
+    private void OnTriggerEnter(Collider other)
     {
-        if (coll.gameObject.tag == "Player")
+        Debug.Log("Fuck");
+        if (other.gameObject.tag == "Player")
         {
-            coll.gameObject.GetComponent<PlayerController>().GameOver();
+            other.gameObject.GetComponent<PlayerController>().GameOver();
         }
+        Die();
     }
 
     void Die()
