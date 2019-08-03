@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
+        Cam();
     }
 
     private void Movement()
@@ -61,6 +62,6 @@ if (hit.collider != null)
 
     private void Cam()
     {
-        cam.transform.position = new Vector2(transform.position.x, 0);
+        cam.transform.position = new Vector3(transform.position.x, 0, -20);
     }
 }
