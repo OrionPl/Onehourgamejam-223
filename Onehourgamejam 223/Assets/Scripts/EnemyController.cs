@@ -7,8 +7,8 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 lastPos = new Vector3(0, 0, 0);
     private GameObject player;
-    public float moveSpeed;
-    public float jumpForce;
+    public float moveSpeed = 1;
+    public float jumpForce = 1;
     public float bulletSpeed;
 
     public GameObject bulletPrefab;
@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        StartCoroutine("GangBang");
     }
     
     void Update()
@@ -26,7 +27,7 @@ public class EnemyController : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position * transform.localScale.x, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed * transform.localScale.x, 0);
+        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed * transform.localScale.x, 0);
     }
 
     void Jump()
@@ -42,6 +43,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            Debug.Log(moveSpeed + " | " + rb.velocity.y);
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
 
@@ -51,5 +53,14 @@ public class EnemyController : MonoBehaviour
         }
 
         lastPos = transform.position;
+    }
+
+    IEnumerator GangBang()
+    {
+        while (true)
+        {
+            Shoot();
+            yield return new WaitForSeconds(1);
+        }
     }
 }
