@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 1;
     private GameObject cam;
     private Animator animator;
+    private bool right = true;
 
     void Start()
     {
@@ -28,17 +29,28 @@ public class PlayerController : MonoBehaviour
     {
         int horizontal = 0;
         bool moved = false;
-
+        
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             horizontal = -1;
             moved = true;
+            right = false;
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             horizontal = 1;
             moved = true;
+            right = true;
+        }
+
+        if (right)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1 , 1, 1);
         }
 
         _rb.velocity = new Vector2(horizontal * moveSpeed, _rb.velocity.y);
