@@ -90,4 +90,9 @@ if (hit.collider != null)
     {
         cam.transform.position = new Vector3(transform.position.x, 0, -20);
     }
+
+    public void GameOver()
+    {
+
+    }
 }
